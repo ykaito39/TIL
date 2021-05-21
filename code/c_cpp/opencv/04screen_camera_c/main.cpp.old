@@ -1,0 +1,32 @@
+#include "cv.h"
+#include "highgui.h"
+
+int main(){
+	int key;
+
+	CvCapture *capture;
+	IplImage *frameImage;
+
+	char windowNameCapture[] = "Capture";
+	if((capture = cvCreateCameraCapture(0)) == NULL){
+		printf ("Can/'t open Camera.\nで　な　お　し　て　こ　い　。\n");
+		key = cvWaitKey(10);
+	}
+
+	cvNamedWindow(windowNameCapture, CV_WINDOW_AUTOSIZE);
+
+	while(1){
+		frameImage = cvQueryFrame(capture);
+		cvShowImage(windowNameCapture, frameImage);
+		key = cvWaitKey(10);
+
+		if(key == 'q'){
+			break;
+		}
+	}
+
+	cvReleaseCapture(&capture);
+	cvDestroyWindow(windowNameCapture);
+
+	return 0;
+}
