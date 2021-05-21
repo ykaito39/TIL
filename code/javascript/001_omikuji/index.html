@@ -1,0 +1,29 @@
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title> JS practice</title>
+        <style>
+            .box {
+                width:110px;
+                height:100px;
+                background-color: skyblue;
+                cursor: pointer; //クリックできることを明示
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box" id="target"></div>
+
+        <script>
+            "use strict";
+
+            document.getElementById("target").addEventListener("click", () => {
+                if(document.getElementById("target").style.background == "skyblue"){
+                    document.getElementById("target").style.background = "pink";
+                }else{
+                    document.getElementById("target").style.background = "skyblue";
+                }
+            });
+        </script>
+    </body>
+</html>
