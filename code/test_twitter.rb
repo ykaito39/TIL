@@ -9,10 +9,10 @@ require 'rubygems'
 require 'pp'
 require 'twitter'
 
-CK = 'KrpllKrz9HUeClOgIFjPaJHVl'
-CS = 'rXjOZDzY6UjEfMTZ7n4h4N2dxBs3THlP73B6hbxOW8v3jerNbH'
-AT = '709397726425800704-BO4l1kWIbOzOVFbuAK45X4rXppXBmO7'
-AS = 'gW6ABQ0sokfn2IDSfw95hfG8hAxfGVdGMPSltGxG0Km7b'
+CK = ''
+CS = ''
+AT = ''
+AS = ''
 
 client = Twitter::REST::Client.new do |config|
     config.consumer_key        = CK
