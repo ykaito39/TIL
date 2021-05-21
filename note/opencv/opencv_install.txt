@@ -1,0 +1,19 @@
+http://www.icrus.org/horiba/article/2014_11_07_01.php
+
+sudo apt-get install build-essential libgtk2.0-dev libjpeg-dev\
+             libtiff4-dev libjasper-dev libopenexr-dev cmake python-dev\
+             python-numpy python-tk libtbb-dev libeigen3-dev\
+             yasm libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev\
+             libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev\
+             libqt4-dev libqt4-opengl-dev sphinx-common texlive-latex-extra\
+             libv4l-dev libdc1394-22-dev libavcodec-dev libavformat-dev\
+             libswscale-dev default-jdk ant libvtk5-qt4-dev
+
+cmake -D WITH_TBB=ON -D BUILD_NEW_PYTHON_SUPPORT=ON\
+	  -D WITH_V4L=ON -D INSTALL_C_EXAMPLES=ON -D\
+	  INSTALL_PYTHON_EXAMPLES=ON -D BUILD_EXAMPLES=ON -D\
+		-D CMAKE_INSTALL_PREFIX=/usr/local \
+	  WITH_QT=ON -D WITH_OPENGL=ON -D WITH_VTK=ON ..
+
+make -j$ (nproc)
+sudo make install
