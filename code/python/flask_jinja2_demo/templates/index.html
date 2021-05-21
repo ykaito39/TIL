@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div>
+    jinja2 loop test<br/>
+        <table border="1" bordercolor="#333333">
+            <tr>
+                <th>num</th>
+                <th>value</th>
+            </tr>
+            {% for l in file_lis %}
+            <tr>
+                <td>{{l[0]}}</td>
+                <td>{{l[1]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% if links[0] != "" %}
+            <a href={{links[0]}} name="page">previous</a>
+        {% endif %}
+        <a href={{links[1]}} name="page">next</a>
+    </div>
+</body>
+</html>

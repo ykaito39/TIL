@@ -1,0 +1,7 @@
+Light is a powerful tool to manipulate matter, but existing approaches often necessitate focused, high-intensity light that limits the manipulated object’s shape, material and size. 
+ Here, we report that self-stabilizing optical manipulation of macroscopic?millimetre-, centimetre- and even metre-scale?objects could be achieved by controlling the anisotropy of light scattering along the object’s surface. 
+ In a scalable design that features silicon resonators on silica substrate, we identify nanophotonic structures that can self-stabilize when rotated and/or translated relative to the optical axis. 
+ Nanoscale control of scattering across a large area creates restoring behaviour by engineering the scattered phase, without needing to focus incident light or excessively constrain the shape, size or material composition of the object. 
+ Our findings may lead to platforms for manipulating macroscopic objects, with applications ranging from contactless wafer-scale fabrication and assembly, to trajectory control for ultra-light spacecraft and even laser-propelled light sails for space exploration. 
+
+光は物質を操るために力強い道具ですが、既存のアプローチでは、しばし捜査対象の形状や材質、サイズによって制限を受けておりました。続けることが必須でした。
