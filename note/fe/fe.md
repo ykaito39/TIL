@@ -22,3 +22,6 @@ MTBF: Mean Time Between Faiure 故障と故障の間の平均時間=正常動作
 MTTR: Mean Time To Repair 修理のための平均時間=  
   
 したがって、MTBF+MTTRはシステム全体の稼働時間のこと。
+  
+# SQL  
+* AVG関数に与えるのは列名で無くてはならない  

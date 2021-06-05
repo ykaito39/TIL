@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://unpkg.com/vue@next"></script>
+        <title>A sample of serInterval</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script>
+            const app = Vue.createApp({
+                created(){
+                    setInterval(()=>{console.log("hoge")}, 1000);
+                }
+            }).mount("#app")
+        </script>
+    </body>
+</html>
