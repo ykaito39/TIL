@@ -5,11 +5,18 @@
         <title>A sample of serInterval</title>
     </head>
     <body>
-        <div id="app"></div>
+        <div id="app">{{interval_time}}</div> <!--メンバへのアクセスを書いておけば、自動で更新がかかる(リアクティブシステムのひとつ)-->
         <script>
-            const app = Vue.createApp({
+            const app = Vue.createApp({ //Vueインスタンスの生成。Vue V3からはこっち。
+            //const app = new Vue({ //Vueインスタンスの生成。今は動かないっぽい。
+                data(){ //V3からは、dataは関数(data())として与える。
+                    return {
+                        interval_time: 0,
+                    }
+                },
                 created(){
-                    setInterval(()=>{console.log("hoge")}, 1000);
+                    //let interval_time = 0; //thisを付けないと、こっちにアクセスしちゃう。
+                    setInterval(()=>{console.log(this.interval_time++)}, 1000); //インスタンス中の変数(dataで定義する)は、this.を付けてアクセスする。
                 }
             }).mount("#app")
         </script>
