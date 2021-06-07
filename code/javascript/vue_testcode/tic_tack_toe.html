@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>三目並べ</title>
+        <meta charset="UTF-8">
+        <!-- Vue3はVue nextとしてGithubで公開されている -->
+        <!-- https://github.com/vuejs/vue-next -->
+        <script src="https://unpkg.com/vue@next"></script>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <style>
+            table {
+                margin:0 auto;
+                border-collapse: collapse;
+                border: 3ps solid #ccc;
+            }
+            table td {
+                border:1px solid #ccc;
+                height: 80px; /* h*wを設定すると未入力でもテーブルがみえるようになる */
+                width: 80px;
+                text-align: center;
+                vertical-align: middle;
+                font-size: 75px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- https://blog.capilano-fw.com/?p=2851 -->
+        <div id="game">
+            <table class="table-auto bg-emerald-200">
+                <tr v-for="(row, r_index) in states">
+                    <!-- Vueでは@clickで、クリック時に実行するメソッドを指定できる -->
+                    <!-- v-on:click=""と同様 -->
+                    <td v-for="(cell, c_index) in row" @click="onSelect(r_index, c_index">
+                        <div v-if="cell==1">◯</div>
+                        <div v-if="cell==2">☓</div>
+                    </td>
+                </tr>
+            </table>
+            <div style="text-align:center;">
+                <div v-if="pid==1">◯プレイヤーの番</div>
+                <div v-if="pid==2">☓プレイヤーの番</div>
+            </div>
+        </div>
+        <script>
+            const game = Vue.createApp({
+                data(){
+                    return{
+                        states: [
+                            [0, 0, 0], //0=入力なし、1=バツ、2=丸
+                            [0, 0, 0],
+                            [0, 0, 0],
+                        ],
+                        pid:1,
+                    }
+                },
+                methods:{
+                    onSelect: function(r_index, c_index){
+                        if(this.states[r_index][c_index] != 0){
+                            pass
+                        }else{
+                            let states = JSON.parse(JSON.stringify(this.states));
+                            states[r_index][c_index] = this.pid;
+                            this.states = states;
+                            this.pid = (this.pid == 2) ? 2:1;
+                        }
+                    }
+                }
+            }).mount("#game")
+        </script>
+    </body>
+</html>
