@@ -30,7 +30,7 @@
                 <tr v-for="(row, r_index) in states">
                     <!-- Vueでは@clickで、クリック時に実行するメソッドを指定できる -->
                     <!-- v-on:click=""と同様 -->
-                    <td v-for="(cell, c_index) in row" @click="onSelect(r_index, c_index">
+                    <td v-for="(cell, c_index) in row" @click="onSelect(r_index, c_index)">
                         <div v-if="cell==1">◯</div>
                         <div v-if="cell==2">☓</div>
                     </td>
@@ -56,12 +56,38 @@
                 methods:{
                     onSelect: function(r_index, c_index){
                         if(this.states[r_index][c_index] != 0){
-                            pass
+                            alert("選択済みのセル")
                         }else{
-                            let states = JSON.parse(JSON.stringify(this.states));
+                            let states = JSON.parse(JSON.stringify(this.states)); 
                             states[r_index][c_index] = this.pid;
                             this.states = states;
-                            this.pid = (this.pid == 2) ? 2:1;
+                            this.pid = (this.pid == 2) ? 1:2;
+                        }
+
+                        const istrue = (arr) => !(arr|=0)
+                        const istrueall = (arr) => arr.some(istrue);
+
+                        //終了判定
+                        if(this.states[0][0] != 0 && this.states[0][0] == this.states[0][1] && this.states[0][0] == this.states[0][2]){
+                            alert(this.states[0][0]+"の勝ち\!")
+                        }else if(this.states[1][0] != 0 && this.states[1][0] == this.states[1][1] && this.states[1][0] == this.states[1][2]){
+                            alert(this.states[1][0]+"の勝ち\!")
+                        }else if(this.states[2][0] != 0 && this.states[2][0] == this.states[2][1] && this.states[2][0] == this.states[2][2]){
+                            alert(this.states[2][0]+"の勝ち\!")
+                        }else if(this.states[0][0] != 0 && this.states[0][0] == this.states[1][0] && this.states[0][0] == this.states[2][0]){
+                            alert(this.states[0][0]+"の勝ち\!")
+                        }else if(this.states[0][1] != 0 && this.states[0][1] == this.states[1][1] && this.states[0][1] == this.states[2][1]){
+                            alert(this.states[0][1]+"の勝ち\!")
+                        }else if(this.states[0][2] != 0 && this.states[0][2] == this.states[1][2] && this.states[0][2] == this.states[2][2]){
+                            alert(this.states[0][2]+"の勝ち\!")
+                        }else if(this.states[0][0] != 0 && this.states[0][0] == this.states[1][1] && this.states[0][0] == this.states[2][2]){
+                            alert(this.states[0][0]+"の勝ち\!")
+                        }else if(this.states[0][2] != 0 && this.states[0][2] == this.states[1][1] && this.states[0][2] == this.states[2][0]){
+                            alert(this.states[0][2]+"の勝ち\!")
+                        }else if(this.states.some(istrueall)){
+                            alert("引き分け")
+                        }else{
+                            pass
                         }
                     }
                 }
