@@ -1,0 +1,73 @@
+<body>
+    <div class="box_area">
+    <div class="box bg1">
+        <div class="box-inner">
+            hoge
+        </div>
+    </div>
+    <div class="box bg2">
+        <div class="box-inner">
+            fuga
+        </div> 
+    </div>
+    <div class="box box-vertical bg3">
+        <div class="box-inner-white">
+            日本の文字レイアウト<br/>
+            宗谷岬でまた会おう<span class="keisen">――</span>
+        </div>
+    </div>
+    </div>  
+</body>
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+
+    .box{
+        margin: 0;
+        padding: 0;
+        height:100vh;
+        width: 100vw;
+
+        font-size: 50px;
+
+        /* Flex box */
+        display: flex;
+        align-items: center; /* 縦のセンター揃え */
+        justify-content: center; /* 横のセンター揃え */
+        flex-direction: column; /* 子要素を縦で並べる。rowだと横並びになる */
+    }
+
+    .box-vertical{
+        font-size: 20px;
+        writing-mode: vertical-rl; /* 縦書きにしてみる */
+    }
+
+    .box-inner{
+        padding: 10vh 20vw 10vh 20vw;
+    }
+
+    .box-inner-white{
+        padding: 10vh 10vw 10vh 10vw;
+        background-color: white;
+    }
+    
+    .bg1{
+        background: goldenrod;
+    }
+
+    .bg2{
+        background: cornflowerblue
+    }
+
+    .bg3{
+        background-color: darkslategrey;
+    }
+
+    /* 罫線用。spanで囲む。 */
+    .keisen{
+        letter-spacing: -1px;
+    }
+</style>
