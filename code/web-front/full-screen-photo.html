@@ -1,21 +1,21 @@
 <body>
     <div class="box_area">
-    <div class="box bg1">
-        <div class="box-inner">
-            hoge
+        <div class="box bg1">
+            <div class="box-inner">
+                hoge
+            </div>
         </div>
-    </div>
-    <div class="box bg2">
-        <div class="box-inner">
-            fuga
-        </div> 
-    </div>
-    <div class="box box-vertical bg3">
-        <div class="box-inner-white">
-            日本の文字レイアウト<br/>
-            宗谷岬でまた会おう<span class="keisen">――</span>
+        <div class="box bg2">
+            <div class="box-inner">
+                fuga
+            </div> 
         </div>
-    </div>
+        <div class="box box-vertical bg3">
+            <div class="box-inner-white">
+                日本の文字レイアウト<br/>
+                宗谷岬でまた会おう<span class="keisen">――</span>
+            </div>
+        </div>
     </div>  
 </body>
 
@@ -23,6 +23,11 @@
     body{
         margin: 0;
         padding: 0;
+    }
+
+    .box-area{
+        overflow: none;
+        display: flex;
     }
 
     .box{
@@ -38,6 +43,7 @@
         align-items: center; /* 縦のセンター揃え */
         justify-content: center; /* 横のセンター揃え */
         flex-direction: column; /* 子要素を縦で並べる。rowだと横並びになる */
+        
     }
 
     .box-vertical{

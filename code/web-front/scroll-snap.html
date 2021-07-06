@@ -17,8 +17,18 @@
     .snap-area{
         height: 300px;
         overflow: scroll;
+
+        /* スクロール可能にして、スクロールバーを消す */
+        /* chrome, safariは::-webkit-scrollbarも必要 */
+        scrollbar-width: none; 
+        
         scroll-snap-stop: always;
         scroll-snap-type: y mandatory;
+    }
+
+    /* スクロール可能にして、スクロールバーを消す(chrome, safari) */
+    ::-webkit-scrollbar{
+        display:none;
     }
 
     .snap-box{
