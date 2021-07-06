@@ -1,19 +1,18 @@
 <body>
-    <div class="box_area">
+    <div class="box-area">
         <div class="box bg1">
             <div class="box-inner">
-                hoge
+                国道40号
             </div>
         </div>
         <div class="box bg2">
             <div class="box-inner">
-                fuga
+                道道106号
             </div> 
         </div>
         <div class="box box-vertical bg3">
             <div class="box-inner-white">
-                日本の文字レイアウト<br/>
-                宗谷岬でまた会おう<span class="keisen">――</span>
+                日本の文字レイアウト<span class="keisen">――</span>
             </div>
         </div>
     </div>  
@@ -26,8 +25,20 @@
     }
 
     .box-area{
-        overflow: none;
-        display: flex;
+        height: 100vh;
+        overflow: scroll;
+
+        /* スクロール可能にして、スクロールバーを消す */
+        /* chrome, safariは::-webkit-scrollbarも必要 */
+        scrollbar-width: none; 
+
+        scroll-snap-stop: always;
+        scroll-snap-type: y mandatory;
+    }
+
+    /* スクロール可能にして、スクロールバーを消す(chrome, safari) */
+    ::-webkit-scrollbar{
+        display:none;
     }
 
     .box{
@@ -44,6 +55,12 @@
         justify-content: center; /* 横のセンター揃え */
         flex-direction: column; /* 子要素を縦で並べる。rowだと横並びになる */
         
+        scroll-snap-align: start;
+
+        /* 背景画像の設定 */
+        background-size: cover; /* アス比維持で最小限表示できるように */
+        background-position: center;
+        overflow: hidden;
     }
 
     .box-vertical{
@@ -61,19 +78,15 @@
     }
     
     .bg1{
-        background: goldenrod;
+        background-image: url(./DSCF1175.JPG);
     }
 
     .bg2{
-        background: cornflowerblue
+        background-image: url(./DSCF0783.jpg);
     }
 
     .bg3{
-        background-color: darkslategrey;
         background-image: url(./PC250035.JPG);
-        background-size: cover; /* アス比維持で最小限表示できるように */
-        background-position: center;
-        overflow: hidden;
     }
 
     /* 罫線用。spanで囲む。 */
