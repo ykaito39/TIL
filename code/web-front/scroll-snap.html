@@ -1,0 +1,35 @@
+<body>
+    <div class="snap-area">
+        <div class="snap-box green">
+
+        </div>
+        <div class="snap-box blue">
+
+        </div>
+        <div class="snap-box green">
+
+        </div>
+    </div>
+</body>
+
+
+<style>
+    .snap-area{
+        height: 300px;
+        overflow: scroll;
+        scroll-snap-stop: always;
+        scroll-snap-type: y mandatory;
+    }
+
+    .snap-box{
+        height: 200px;
+        scroll-snap-align: start;
+    }
+
+    .green{
+        background-color: green;
+    }
+    .blue{
+        background-color: blue;
+    }
+</style>
