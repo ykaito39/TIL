@@ -56,3 +56,17 @@ overflowを指定する必要があるが、スクロールバーが表示され
     display:none;
 }
 ```
+  
+## sticky  
+スクロールして、特定の要素が画面の特定の場所に来たら止めたい場合。  
+親要素にposition:relativeを指定し、止めたい要素にstickyを指定する。  
+positionを指定するtopやbottomで、止めたい位置を指定する。  
+```css
+.stick{
+    height: auto;
+    background-color: chocolate;
+    position: -webkit-sticky; /* safari */
+    position: sticky; /* 要素が[topとかbottom]に当たると止まる */
+    top: 0;
+}
+```
