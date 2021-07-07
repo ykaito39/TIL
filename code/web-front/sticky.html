@@ -1,0 +1,25 @@
+<body>
+    <div class="parent">
+        <div class="child"></div>
+        <div class="stick">sticky field</div>
+        <div class="child"></div>
+    </div>
+</body>
+<style>
+    .parent{
+        overflow: scroll;
+        height: 200px;
+        position: relative;
+    }
+    .child{
+        background-color: cadetblue;
+        height: 500px;
+    }
+    .stick{
+        height: auto;
+        background-color: chocolate;
+        position: -webkit-sticky; /* safari */
+        position: sticky; /* 要素が[topとかbottom]に当たると止まる */
+        top: 0;
+    }
+</style>
