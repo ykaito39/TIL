@@ -1,13 +1,13 @@
 <body>
     <div class="box-area">
         <div class="box bg1">
-            <div class="box-inner">
+            <div class="box-inner caption-font">
                 国道40号
             </div>
         </div>
         <div class="box bg2">
-            <div class="box-inner">
-                道道106号
+            <div class="box-inner inner2 caption-font">
+                国道232号
             </div> 
         </div>
         <div class="box box-vertical bg3">
@@ -61,6 +61,8 @@
         background-size: cover; /* アス比維持で最小限表示できるように */
         background-position: center;
         overflow: hidden;
+
+        position:relative;
     }
 
     .box-vertical{
@@ -72,6 +74,15 @@
         padding: 10vh 20vw 10vh 20vw;
     }
 
+    .inner2{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        padding: 1vh 2vw 1vh 2vw;
+    }
+
+
     .box-inner-white{
         padding: 10vh 10vw 10vh 10vw;
         background-color: white;
@@ -82,7 +93,7 @@
     }
 
     .bg2{
-        background-image: url(./DSCF0783.jpg);
+        background-image: url(./DSCF1596.JPG);
     }
 
     .bg3{
@@ -93,4 +104,15 @@
     .keisen{
         letter-spacing: -1px;
     }
+    
+    /* media query設定してみる */
+    @media all and (max-width:400px){
+    .caption-font{
+        font-size: 20px;
+    }}
+
+    @media all and (min-width:401px){
+    .caption-font{
+        font-size: 50px;
+    }}
 </style>
