@@ -2,40 +2,88 @@
     <div class="box">
         <div class="card">
             <div class="content-img"></div>
-            <div class="text-area">teeeeeeeeeeeeeeejfefefakshfkhaksjhfkahslkdjfhkajshdfkjhalksjfhklajhskdfhjaksjhdfkajhskldfhjksjhflkjahslkfjhalksjhflaksjhdfkahsk</div>
+            <div class="text-area">teeeeqaAaaaaasdfasdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfadsfasdfasdfadfadfasdfadfasdfasdfeeeeeeeeeeejfefefakshfkhaksjhfkahslkdjfhkajshdfkjhalksjfhklajhskdfhjaksjhdfkajhskldfhjksjhflkjahslkfjhalksjhflaksjhdfkahsk</div>
         </div>
         <div class="card">
-            <div class="content-img"></div>
-            <div class="text-area"></div>
+            <div class="content-img-damepattern"></div>
+            <div class="text-area">teeeeqaAaaaaasdfasdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfdfasdfadsfasdfasdfadfadfasdfadfasdfasdfeeeeeeeeeeejfefefakshfkhaksjhfkahslkdjfhkajshdfkjhalksjfhklajhskdfhjaksjhdfkajhskldfhjksjhflkjahslkfjhalksjhflaksjhdfkahsk</div>
         </div>
         <div class="card">
             <div class="content-img"></div>
             <div class="text-area"></div>
         </div>
     </div>
+    高さは文字数によって自動調整される
+    <div class="text-area2 bg-blue">ほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ</div>
+
+    <div class="parent">
+        <div class="child">hogehogehogehogehogehogehoge</div>
+        <div class="child2">piyopiyopiyopiyopiyopiyopiyopiyopiyopiyopiyopiyo</div>
+    </div>
 </body>
 <style>
     .box{
-        display: flex;
+        display: flex; /*無関係*/
         width: 50vh;
         overflow: scroll;
+        /* min-height:50vh; これを設定しても.content-imgのheightに%自動調整されない*/
     }
     .card{
         background-color: coral;
         margin: 10px;
-        min-height: 400px;
+        min-height: 400px; /* これの高さになっちゃう */
         min-width: 300px;
-
         position:relative;
     }
     .content-img{
         background-color:cornflowerblue;
-        height:80%;
+        height:200px; /* これを%で与えると.cardの高さが自動で調整されなかった */
     }
-    /* はみでるんだが */
+    .content-img-damepattern{
+        background-color:cornflowerblue;
+        height:50%; /* これを%で与えると.cardの高さが自動で調整されなかった */
+    }
     .text-area{
+        /*
+        position: relative;
+        left: 0;
+        top: 0;
         padding: 10;
+        */
         overflow-wrap: break-word;
-        height:auto;
+
+        display: inline-block;
+        width: 100%;
+    }
+
+    /* ↓これだけで高さは自動で変わる。 */
+    /* 親要素が子要素の高さ変動に追従できていない感じ? */
+    .text-area2{
+        left: 0;
+        top: 0;
+        padding: 10;
+
+        overflow-wrap: break-word;
+
+        width: 50%;
+        min-height: 100px;
+    }
+    .bg-blue{
+        background-color:cornflowerblue;
+    }
+
+    .parent{
+        width: 100px;
+        min-height: 10px;
+        height: auto;
+    }
+    .child{
+        height: 20%;
+        overflow-wrap:break-word;
+        background-color: cornflowerblue;
+    }
+    .child2{
+        overflow-wrap:break-word;
+        background-color: rgb(67, 128, 241);
     }
 </style>
