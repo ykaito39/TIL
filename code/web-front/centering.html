@@ -1,0 +1,33 @@
+<body>
+    <div class="scroll">
+        この要素から飛び出るので固定配置っぽい
+        <div class="container">
+            <p>画面中央揃え(固定)</p>
+        </div>
+    </div>
+</body>
+<style>
+    .scroll{
+        height: 100px;
+        overflow:scroll;
+    }
+    .container{
+        height: 50vh;
+        width: 50vw;
+        background-color: crimson;
+
+        /* 最近主流の実装 */
+        position: fixed; /* 絶対値、スクロールしても固定 */
+        inset: 0;
+        margin: auto;
+
+        /* 昔は↓だったらしい */
+/*
+        position: fixed;
+        left: 50%;
+        right: 50%;
+        transform:  translateX(-50%)
+                    translateY(-50%);
+*/
+    }
+</style>
